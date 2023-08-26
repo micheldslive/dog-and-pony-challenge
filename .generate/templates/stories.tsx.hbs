@@ -1,0 +1,18 @@
+import type { StoryFn } from '@storybook/react'
+
+import { {{pascalCase name}} } from '.'
+
+const {{pascalCase name}}Story = {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+}
+
+const Template: StoryFn = () => {
+  return <{{pascalCase name}} />
+}
+
+export const Default = Template.bind({})
+
+Default.args = {}
+
+export default {{pascalCase name}}Story
