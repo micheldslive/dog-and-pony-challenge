@@ -1,34 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="./docs/assets/banner.svg" /> 
+  <br />
+</p>
+<p align="center">
+  <a href="https://github.com/micheldslive/dog-and-pony-challenge#about-">About</a> •  
+  <a href="https://github.com/micheldslive/dog-and-pony-challenge#techs-">Techs</a> •  
+  <a href="https://github.com/micheldslive/dog-and-pony-challenge#getting-started-">Getting started</a> •  
+  <a href="https://dog-and-pony.mi-code.dev/" target="_blank">Live demo</a>
+  <a href="https://dog-and-pony-book.mi-code.dev/" target="_blank">Book Live demo</a>
+</p>
 
-## Getting Started
+## About 💻
 
-First, run the development server:
+Project made for Dog and Pony Studios front end challenge.
+
+## Libs 🚀
+
+The project was developed with following libraries:
+
+- **[Next.js](https://nextjs.org)** is the React Web Framework of choice
+- Styling with **[TailwindCSS](https://tailwindcss.com)**
+- **[Radix UI](https://www.radix-ui.com)** accessible and customizable library
+- **[Storybook](https://storybook.js.org/)** to create a domented app library
+- **[React Hook Form](https://react-hook-form.com)** to deal with forms
+- Modern State Manager with **[Zustand](https://github.com/pmndrs/zustand)**
+- Linting with **[Eslint](https://eslint.org)**
+- Code formatting with **[Prettier](https://prettier.io)**
+- Git hook with **[Husky](https://github.com/typicode/husky)**
+- **[Lint Staged](https://github.com/okonet/lint-staged)** to check staged files before commits
+- Automated workflow to production with **[GitHub Actions](https://github.com/features/actions)**
+- Static Types with **[Typescript](https://www.typescriptlang.org)**
+- Runtime schema validation with **[Zod](https://zod.dev)**
+- Generate new components with **[plop](https://plopjs.com/)**
+
+## Getting Started 📦
+
+Clone this repository in your local machine:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/micheldslive/dog-and-pony-challenge.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then move to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd dog-and-pony-challenge
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install the project dependencies:
 
-## Learn More
+```bash
+pnpm i
+# or
+yarn
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the application locally and open up [local host](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+# or
+yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+With Docker properly installed and the repository Cloned, Run the command below:
 
-## Deploy on Vercel
+```bash
+docker compose up
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The main components of the application were documented. To access them in their locale, run the following command:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm storybook
+# or
+yarn storybook
+```
+
+## Developer 💻<br>
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/micheldslive">
+        <img src="https://avatars.githubusercontent.com/u/55795597?v=4" width="100" alt="Foto no GitHub"/><br>
+        <sub>
+          <b>Michel Domingos</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+## 🖊️ License
+
+This project is licensed under the MIT License - see the LICENSE page for details.
