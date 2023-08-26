@@ -1,37 +1,37 @@
-{
-  "extends": [
+module.exports = {
+  extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
-  "root": true,
-  "rules": {
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint", "eslint-plugin-import-helpers"],
+  root: true,
+  rules: {
     "comma-dangle": [
       "error",
       {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "always-multiline"
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "always-multiline"
       }
     ],
     "import-helpers/order-imports": [
       "warn",
       {
-        "alphabetize": { "order": "asc", "ignoreCase": true },
-        "groups": [
+        alphabetize: { order: "asc", ignoreCase: true },
+        groups: [
           ["/^react$/", "/^next$/"],
           "module",
-          ["/^@/ui/", "/^@/shared/, '/^@/styles/"],
-          ["/^@/utils/", "/^@/contants/"],
+          ["/^@/ui/", "/^@/shared/", "/^@/styles/"],
+          ["/^@/utils/", "/^@/constants/"],
           ["/^@/types/"],
           ["parent", "sibling", "index"]
         ],
-        "newlinesBetween": "always"
+        newlinesBetween: "always"
       }
     ],
     "no-undef": "off",
@@ -43,8 +43,8 @@
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "ignoreRestSiblings": true
+        ignoreRestSiblings: true
       }
     ]
-  }
-}
+  },
+};
