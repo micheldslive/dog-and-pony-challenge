@@ -6,7 +6,7 @@
   <a href="https://github.com/micheldslive/dog-and-pony-challenge#about-">About</a> •  
   <a href="https://github.com/micheldslive/dog-and-pony-challenge#techs-">Techs</a> •  
   <a href="https://github.com/micheldslive/dog-and-pony-challenge#getting-started-">Getting started</a> •  
-  <a href="https://dog-and-pony.mi-code.dev/" target="_blank">Live demo</a>
+  <a href="https://dog-and-pony.mi-code.dev/" target="_blank">Live demo</a> •
   <a href="https://dog-and-pony-book.mi-code.dev/" target="_blank">Book Live demo</a>
 </p>
 
