@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    container_name: dog-and-pony
+    restart: always
+    volumes:
+      - ./:/dog-and-pony
+    ports:
+      - 3000:3000
+    command:
+      - /bin/sh
+      - -c
+      - |
+        pnpm dev
+
+  book:
+    build: .
+    container_name: dog-and-pony-book
+    restart: always
+    volumes:
+      - ./:/dog-and-pony
+    ports:
+      - 6006:6006
+    command:
+      - /bin/sh
+      - -c
+      - |
+        pnpm storybook
