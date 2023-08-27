@@ -1,30 +1,34 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
+    {
+      name: '@storybook/addon-styling',
+      options: {},
+    },
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {}
+    options: {},
   },
   docs: {
-    autodocs: 'tag'
+    autodocs: 'tag',
   },
-  webpackFinal: async config => {
+  webpackFinal: async (config) => {
     config.resolve = {
       ...config.resolve,
       fallback: {
         ...(config.resolve || {}).fallback,
         fs: false,
         stream: false,
-        os: false
-      }
-    };
-    return config;
-  }
-};
-export default config;
+        os: false,
+      },
+    }
+    return config
+  },
+}
+export default config
