@@ -4,21 +4,21 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "ci": "yarn lint && yarn type-check",
+    "ci": "npm lint && npm type-check",
     "dev": "next dev",
     "lint": "eslint src --max-warnings=0",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "npm lint --fix",
     "prepare": "husky install",
     "start": "next start",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "type-check:watch": "yarn type-check -w",
+    "type-check:watch": "npm type-check -w",
     "storybook": "storybook dev -p 6006 -s ../public",
     "build-storybook": "storybook build -s public",
-    "generate": "pnpm plop --plopfile .generate/plopfile.js"
+    "generate": "npm plop --plopfile .generate/plopfile.js"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "yarn lint --fix"
+      "npm lint --fix"
     ]
   },
   "dependencies": {
