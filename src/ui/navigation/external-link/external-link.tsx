@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
-type ExternalLinkProps = {
+export type ExternalLinkProps = {
   href: string
 } & ComponentProps<'a'>
 

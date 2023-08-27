@@ -6,16 +6,7 @@ import { useToast } from '@/core/stores'
 import * as RadixSeparatorPrimitive from '@radix-ui/react-separator'
 import clsx from 'clsx'
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionHeader,
-  AccordionItem,
-  AccordionTrigger,
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/ui/disclosure'
+import { Accordion, Collapsible } from '@/ui/disclosure'
 import { Button, IconButton } from '@/ui/form'
 import { Icon } from '@/ui/media'
 
@@ -43,9 +34,12 @@ export const OfficeList = () => {
 
   return (
     <div className='flex flex-col gap-8'>
-      <Collapsible open={isCollapsibleOpen} onOpenChange={setIsCollapsibleOpen}>
+      <Collapsible.Root
+        open={isCollapsibleOpen}
+        onOpenChange={setIsCollapsibleOpen}
+      >
         {!isCollapsibleOpen ? (
-          <CollapsibleTrigger asChild>
+          <Collapsible.Trigger asChild>
             <Button
               className={clsx('h-14 justify-between rounded-lg px-6')}
               fullWidth
@@ -53,40 +47,44 @@ export const OfficeList = () => {
             >
               Add New Location
             </Button>
-          </CollapsibleTrigger>
+          </Collapsible.Trigger>
         ) : (
           <div className='flex items-center justify-between rounded-lg bg-white px-6 py-4'>
             <h3 className='text-primary-dark-blue text-xl font-bold'>
               New Location
             </h3>
-            <CollapsibleTrigger asChild>
+            <Collapsible.Trigger asChild>
               <IconButton size='sm' variant='neutral'>
                 <Icon as='cross' />
               </IconButton>
-            </CollapsibleTrigger>
+            </Collapsible.Trigger>
           </div>
         )}
-        <CollapsibleContent>
+        <Collapsible.Content>
           <OfficeInsertForm
             onInsert={(office) => {
               newOffice({ office, toggle })
               setIsCollapsibleOpen(false)
             }}
           />
-        </CollapsibleContent>
-      </Collapsible>
-      <Accordion collapsible onValueChange={onChangeAccordion} type='single'>
+        </Collapsible.Content>
+      </Collapsible.Root>
+      <Accordion.Root
+        collapsible
+        onValueChange={onChangeAccordion}
+        type='single'
+      >
         {offices?.map(({ id, title, editing, contact, address }) => {
           return (
-            <AccordionItem key={id} value={id}>
+            <Accordion.Item key={id} value={id}>
               {editing ? (
                 <div className='flex items-center justify-between px-6 py-4'>
-                  <AccordionHeader asChild>
+                  <Accordion.Header asChild>
                     <h3 className='text-primary-dark-blue text-xl font-bold'>
                       Edit Location
                     </h3>
-                  </AccordionHeader>
-                  <AccordionTrigger asChild>
+                  </Accordion.Header>
+                  <Accordion.Trigger asChild>
                     <IconButton
                       onClick={() => toggleEditingOffice({ id })}
                       size='sm'
@@ -94,20 +92,20 @@ export const OfficeList = () => {
                     >
                       <Icon as='cross' />
                     </IconButton>
-                  </AccordionTrigger>
+                  </Accordion.Trigger>
                 </div>
               ) : (
-                <AccordionTrigger>
+                <Accordion.Trigger>
                   <div className='text-left'>
-                    <AccordionHeader>{title}</AccordionHeader>
+                    <Accordion.Header>{title}</Accordion.Header>
                     <span>{address}</span>
                   </div>
                   <div className='text-accent-blue group-data-[state=open]:rotate-180 group-data-[state=open]:text-white'>
                     <Icon as='chevron-down' size='md' />
                   </div>
-                </AccordionTrigger>
+                </Accordion.Trigger>
               )}
-              <AccordionContent>
+              <Accordion.Content>
                 {editing ? (
                   <OfficeEditForm
                     office={{ id, title, editing, contact, address }}
@@ -140,11 +138,11 @@ export const OfficeList = () => {
                     </div>
                   </div>
                 )}
-              </AccordionContent>
-            </AccordionItem>
+              </Accordion.Content>
+            </Accordion.Item>
           )
         })}
-      </Accordion>
+      </Accordion.Root>
     </div>
   )
 }

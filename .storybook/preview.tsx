@@ -1,5 +1,24 @@
-import React from 'react';
-import { type Preview } from '@storybook/react';
+import React from 'react'
+import { StoryFn, type Preview } from '@storybook/react'
+
+import { withThemeByClassName } from '@storybook/addon-styling'
+
+import RootLayout from '../src/app/layout'
+import { OfficesLayout } from '../src/layouts/offices'
+
+import '../src/styles/globals.css'
+
+const withRootLayout = (Story: StoryFn) => {
+  return (
+    <RootLayout>
+      <OfficesLayout.Main>
+        <OfficesLayout.Section>
+          <Story />
+        </OfficesLayout.Section>
+      </OfficesLayout.Main>
+    </RootLayout>
+  )
+}
 
 const preview: Preview = {
   parameters: {
@@ -7,21 +26,32 @@ const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
+        date: /Date$/,
+      },
     },
     backgrounds: {
       default: 'transparent',
       values: [
         {
           name: 'transparent',
-          value: 'transparent'
-        }
-      ]
-    }
+          value: 'transparent',
+        },
+      ],
+    },
   },
-  decorators: []
-};
+  decorators: [
+    // Adds theme switching support.
+    // NOTE: requires setting "darkMode" to "class" in your tailwind config
+    withThemeByClassName({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+    }),
+    withRootLayout,
+  ],
+}
 
 export const globalTypes = {
   locale: {
@@ -32,11 +62,11 @@ export const globalTypes = {
       icon: 'globe',
       items: [
         { value: 'pt', title: 'Português' },
-        { value: 'en', title: 'English' }
+        { value: 'en', title: 'English' },
       ],
       showName: true,
-      dynamicTitle: true
-    }
+      dynamicTitle: true,
+    },
   },
   theme: {
     name: 'Theme',
@@ -46,12 +76,12 @@ export const globalTypes = {
       icon: 'circlehollow',
       items: [
         { value: 'dark', icon: 'moon', title: 'Dark' },
-        { value: 'light', icon: 'sun', title: 'Light' }
+        { value: 'light', icon: 'sun', title: 'Light' },
       ],
       showName: true,
-      dynamicTitle: true
-    }
-  }
-};
+      dynamicTitle: true,
+    },
+  },
+}
 
-export default preview;
+export default preview

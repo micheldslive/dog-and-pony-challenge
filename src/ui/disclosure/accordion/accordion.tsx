@@ -87,8 +87,10 @@ Item.displayName = 'AccordionItem'
 Trigger.displayName = 'AccordionTrigger'
 
 // Exports
-export const Accordion = Root
-export const AccordionContent = Content
-export const AccordionItem = Item
-export const AccordionTrigger = Trigger
-export const AccordionHeader = Header
+export const Accordion = {
+  Root,
+  Content,
+  Item,
+  Trigger,
+  Header,
+}

@@ -1,5 +1,5 @@
 import { OfficesLayout } from '@/layouts/offices'
 
 export default function Home() {
-  return <OfficesLayout />
+  return <OfficesLayout.Root />
 }

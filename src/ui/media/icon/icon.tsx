@@ -119,7 +119,7 @@ const icons = {
 type IconSizes = 'sm' | 'md' | 'lg'
 type IconVariants = keyof typeof icons
 
-type IconProps = {
+export type IconProps = {
   as: IconVariants
   label?: string
   size?: IconSizes

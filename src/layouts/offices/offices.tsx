@@ -1,8 +1,22 @@
+import React, { PropsWithChildren } from 'react'
+
+const Main = ({ children }: PropsWithChildren) => {
+  return (
+    <main className='mx-auto min-h-screen w-full max-w-[320px] pb-12 pt-[160px]'>
+      {children}
+    </main>
+  )
+}
+
+const Section = ({ children }: PropsWithChildren) => {
+  return <section className='py-6'>{children}</section>
+}
+
 import { OfficeList } from '@/shared/office'
 import { ExternalLink } from '@/ui/navigation'
 import { Toast, ToastProvider } from '@/ui/overlay'
 
-export const OfficesLayout = () => {
+const Root = () => {
   return (
     <ToastProvider>
       <Toast />
@@ -29,4 +43,10 @@ export const OfficesLayout = () => {
       </main>
     </ToastProvider>
   )
+}
+
+export const OfficesLayout = {
+  Root,
+  Main,
+  Section,
 }

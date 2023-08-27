@@ -54,6 +54,8 @@ const Content = ({ children, ...props }: ContentProps) => {
 Trigger.displayName = 'CollapsibleTrigger'
 
 // Exports
-export const Collapsible = Root
-export const CollapsibleContent = Content
-export const CollapsibleTrigger = Trigger
+export const Collapsible = {
+  Root,
+  Content,
+  Trigger,
+}
