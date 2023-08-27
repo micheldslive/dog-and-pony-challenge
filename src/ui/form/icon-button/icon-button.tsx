@@ -2,7 +2,7 @@ import { ComponentProps, forwardRef } from 'react'
 
 import clsx from 'clsx'
 
-type IconButtonProps = {
+export type IconButtonProps = {
   children: React.ReactNode
   size?: 'sm' | 'base'
   variant?: 'primary' | 'neutral' | 'attention'

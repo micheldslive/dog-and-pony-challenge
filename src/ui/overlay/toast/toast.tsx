@@ -5,7 +5,7 @@ import * as RadixToastPrimitive from '@radix-ui/react-toast'
 import { IconButton } from '@/ui/form'
 import { Icon } from '@/ui/media'
 
-type ToastProviderProps = RadixToastPrimitive.ToastProps
+export type ToastProviderProps = RadixToastPrimitive.ToastProps
 
 export const ToastProvider = ({ children, ...props }: ToastProviderProps) => {
   return (

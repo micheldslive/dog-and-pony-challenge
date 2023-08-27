@@ -7,7 +7,7 @@ import { Icon } from '@/ui/media'
 
 type InputStatus = 'default' | 'error'
 
-type InputProps = {
+export type InputProps = {
   helperText?: string
   label?: string
   name: string

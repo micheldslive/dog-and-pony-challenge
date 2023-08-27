@@ -1,6 +1,6 @@
 import { createStore, useStore } from 'zustand'
 
-type Actions = {
+export type Actions = {
   reset: (open: boolean) => void
   toggle: (open: boolean) => (value: string) => void
 }
