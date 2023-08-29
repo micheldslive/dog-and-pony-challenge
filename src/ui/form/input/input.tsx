@@ -43,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         >
           <input
             className={clsx(
-              'text-primary-dark-blue placeholder:text-primary-grey w-full leading-none outline-none',
+              'text-primary-dark-blue placeholder:text-primary-grey w-full leading-none outline-none dark:bg-transparent',
               props.disabled && 'text-primary-grey cursor-not-allowed',
             )}
             name={name}

@@ -1,6 +1,8 @@
 import { FORM_INFO } from '@/core/mocks'
 import type { StoryFn } from '@storybook/react'
 
+import { Collapsible } from '@/ui/disclosure'
+
 import { OfficeEditForm } from './office-edit-form'
 
 const OfficeEditFormStory = {
@@ -10,12 +12,14 @@ const OfficeEditFormStory = {
 
 const Template: StoryFn = () => {
   return (
-    <OfficeEditForm
-      office={FORM_INFO}
-      onEdit={function (): void {
-        throw new Error('Function not implemented.')
-      }}
-    />
+    <Collapsible.Base>
+      <OfficeEditForm
+        office={FORM_INFO}
+        onEdit={function (): void {
+          throw new Error('Function not implemented.')
+        }}
+      />
+    </Collapsible.Base>
   )
 }
 

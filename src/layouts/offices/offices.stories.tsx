@@ -1,5 +1,7 @@
 import type { StoryFn } from '@storybook/react'
 
+import { ThemeToggle } from '@/shared/toggle-color'
+
 import { OfficesLayout } from '.'
 
 const OfficesLayoutStory = {
@@ -8,7 +10,12 @@ const OfficesLayoutStory = {
 }
 
 const Template: StoryFn = () => {
-  return <OfficesLayout.Root />
+  return (
+    <>
+      <ThemeToggle.Root />
+      <OfficesLayout.Content />
+    </>
+  )
 }
 
 export const Default = Template.bind({})

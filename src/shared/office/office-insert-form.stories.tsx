@@ -1,5 +1,7 @@
 import type { StoryFn } from '@storybook/react'
 
+import { Collapsible } from '@/ui/disclosure'
+
 import { OfficeInsertForm } from './office-insert-form'
 
 const OfficeInsertFormStory = {
@@ -9,11 +11,13 @@ const OfficeInsertFormStory = {
 
 const Template: StoryFn = () => {
   return (
-    <OfficeInsertForm
-      onInsert={function (): void {
-        throw new Error('Function not implemented.')
-      }}
-    />
+    <Collapsible.Base>
+      <OfficeInsertForm
+        onInsert={function (): void {
+          throw new Error('Function not implemented.')
+        }}
+      />
+    </Collapsible.Base>
   )
 }
 

@@ -1,5 +1,6 @@
-import { Metadata } from 'next'
+'use client'
 
+import { ThemeProvider } from 'next-themes'
 import { Roboto } from 'next/font/google'
 
 import '@/styles/globals.css'
@@ -10,19 +11,16 @@ const roboto = Roboto({
   weight: ['300', '400', '700'],
 })
 
-export const metadata: Metadata = {
-  title: 'Dog And Pony Studios - Offices',
-  description: 'An application to list all Dog And Pony Studio Offices',
-}
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html className='bg-primary-light-grey text-primary-grey' lang='en'>
-      <body className={`${roboto.variable} font-sans`}>{children}</body>
+    <html className='text-primary-grey' lang='en'>
+      <body className={`${roboto.variable} font-sans`}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   )
 }
