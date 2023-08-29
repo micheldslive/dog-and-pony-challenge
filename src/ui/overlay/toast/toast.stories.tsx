@@ -1,8 +1,9 @@
+import { useToast } from '@/core/stores'
 import type { Meta, StoryFn } from '@storybook/react'
 
+import { Button } from '@/ui/form'
+
 import { ToastProvider, Toast } from '.'
-import { useToast } from '../../../core/stores'
-import { Button } from '../../form'
 
 const ToastStory = {
   title: 'UI/Toast',

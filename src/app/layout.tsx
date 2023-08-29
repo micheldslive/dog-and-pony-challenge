@@ -1,5 +1,7 @@
+'use client'
 import { Metadata } from 'next'
 
+import { ThemeProvider } from 'next-themes'
 import { Roboto } from 'next/font/google'
 
 import '@/styles/globals.css'
@@ -21,8 +23,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className='bg-primary-light-grey text-primary-grey' lang='en'>
-      <body className={`${roboto.variable} font-sans`}>{children}</body>
+    <html className='text-primary-grey' lang='en'>
+      <body className={`${roboto.variable} font-sans`}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   )
 }

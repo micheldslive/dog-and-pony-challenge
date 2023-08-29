@@ -5,6 +5,13 @@ import clsx from 'clsx'
 
 type RootProps = RadixCollapsiblePrimitive.CollapsibleProps
 
+const Base = ({ children, ...props }: RootProps) => {
+  return (
+    <div className='shadow-base rounded-lg bg-white p-6' {...props}>
+      {children}
+    </div>
+  )
+}
 const Root = ({ children, ...props }: RootProps) => {
   return (
     <RadixCollapsiblePrimitive.Root
@@ -58,4 +65,5 @@ export const Collapsible = {
   Root,
   Content,
   Trigger,
+  Base,
 }
