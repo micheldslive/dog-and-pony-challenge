@@ -2,6 +2,7 @@ import { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config: Config = {
+  darkMode: ['class', '[data-theme="dark"]'],
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -18,6 +19,7 @@ const config: Config = {
           red: '#ff7b92',
         },
         primary: {
+          dark: '#002b3b',
           'dark-blue': '#313e4f',
           grey: '#989Ea7',
           'light-grey': '#e8edf3',
