@@ -1,5 +1,4 @@
 'use client'
-import { Metadata } from 'next'
 
 import { ThemeProvider } from 'next-themes'
 import { Roboto } from 'next/font/google'
@@ -11,11 +10,6 @@ const roboto = Roboto({
   variable: '--font-roboto',
   weight: ['300', '400', '700'],
 })
-
-export const metadata: Metadata = {
-  title: 'Dog And Pony Studios - Offices',
-  description: 'An application to list all Dog And Pony Studio Offices',
-}
 
 export default function RootLayout({
   children,
