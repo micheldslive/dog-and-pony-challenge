@@ -1,6 +1,8 @@
 import { CONTACT_INFO } from '@/core/mocks'
 import type { StoryFn } from '@storybook/react'
 
+import { Collapsible } from '@/ui/disclosure'
+
 import { OfficeInfo } from './office-info'
 
 const OfficeInfoStory = {
@@ -9,7 +11,11 @@ const OfficeInfoStory = {
 }
 
 const Template: StoryFn = () => {
-  return <OfficeInfo contact={CONTACT_INFO} />
+  return (
+    <Collapsible.Base>
+      <OfficeInfo contact={CONTACT_INFO} />
+    </Collapsible.Base>
+  )
 }
 
 export const Default = Template.bind({})
